@@ -8,13 +8,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { Dashboard } from './dashboard/dashboard';
 import { User } from './user/user';
 import { DialogAddUser } from './dialog-add-user/dialog-add-user';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [App, Dashboard, User, DialogAddUser],
@@ -30,7 +35,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule 
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
