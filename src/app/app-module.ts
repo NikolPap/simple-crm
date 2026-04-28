@@ -14,15 +14,19 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { Dashboard } from './dashboard/dashboard';
 import { User } from './user/user';
 import { DialogAddUser } from './dialog-add-user/dialog-add-user';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { UserDetail } from './user-detail/user-detail';
+import { DialodEditAdress } from './dialod-edit-adress/dialod-edit-adress';
+import { DialogEditUser } from './dialog-edit-user/dialog-edit-user';
 
 @NgModule({
-  declarations: [App, Dashboard, User, DialogAddUser],
+  declarations: [App, Dashboard, User, DialogAddUser, UserDetail, DialodEditAdress, DialogEditUser],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,9 +41,10 @@ import {MatCardModule} from '@angular/material/card';
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
+    MatMenuModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule 
+    AngularFirestoreModule,
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
